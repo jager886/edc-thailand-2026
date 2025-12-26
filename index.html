@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EDC Thailand 2026 互動攻略指南</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap');
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        .card-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .stage-gradient-kinetic { background: linear-gradient(135deg, #ec4899 0%, #a855f7 100%); }
+        .stage-gradient-circuit { background: linear-gradient(135deg, #ef4444 0%, #f97316 100%); }
+        .stage-gradient-neon { background: linear-gradient(135deg, #8b5cf6 0%, #3b82f6 100%); }
+        .stage-gradient-stereo { background: linear-gradient(135deg, #06b6d4 0%, #10b981 100%); }
+    </style>
+    <!-- Chosen Palette: Warm Neutrals with Electric Gradients -->
+    <!-- Application Structure Plan: Same as before, now including Jessica Audiffred in Day 1 data. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+</head>
+<body class="bg-slate-50 min-h-screen flex flex-col">
+
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600">
+                ⚡ EDC Thailand 2026
+            </h1>
+            <nav class="hidden md:flex space-x-6 text-sm font-medium text-slate-600">
+                <a href="#overview" class="hover:text-purple-600 transition">概覽</a>
+                <a href="#budget" class="hover:text-purple-600 transition">預算 & 交通</a>
+                <a href="#stages" class="hover:text-purple-600 transition">舞台介紹</a>
+                <a href="#lineup" class="hover:text-purple-600 transition">DJ 陣容攻略</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <!-- Overview Section -->
+        <section id="overview" class="max-w-7xl mx-auto px-4 py-12">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-4">普吉島電音盛典互動攻略</h2>
+                <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+                    2026 年 1 月 16 日 - 18 日 • Rhythm Park, Phuket<br>
+                    <span class="text-sm bg-purple-100 text-purple-700 py-1 px-3 rounded-full mt-2 inline-block">20 歲以上憑護照入場</span>
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100 text-center">
+                    <div class="text-3xl mb-2">📅</div>
+                    <h3 class="font-bold text-slate-800">活動日期</h3>
+                    <p class="text-slate-600">1/16 (五) - 1/18 (日)</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100 text-center">
+                    <div class="text-3xl mb-2">📍</div>
+                    <h3 class="font-bold text-slate-800">地點</h3>
+                    <p class="text-slate-600">Rhythm Park (近 Laguna 渡假區)</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100 text-center">
+                    <div class="text-3xl mb-2">🧴</div>
+                    <h3 class="font-bold text-slate-800">防曬提醒</h3>
+                    <p class="text-slate-600">一月普吉島依然炎熱</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Budget Section -->
+        <section id="budget" class="bg-white py-12 border-y border-slate-100">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="mb-8">
+                    <h2 class="text-3xl font-bold text-slate-900 mb-4">💰 官方門票與預算試算</h2>
+                    <p class="text-slate-600">匯率參考：1 THB ≈ 0.94 TWD</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                    <div class="overflow-hidden rounded-xl border border-slate-200">
+                        <table class="w-full text-left text-sm">
+                            <thead class="bg-slate-50 text-slate-900 font-semibold">
+                                <tr>
+                                    <th class="p-4">票種 (3日票)</th>
+                                    <th class="p-4 text-right">泰銖 (THB)</th>
+                                    <th class="p-4 text-right">預估台幣 (TWD)</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-100 text-slate-600">
+                                <tr>
+                                    <td class="p-4 font-medium">GA 入場票</td>
+                                    <td class="p-4 text-right">฿9,590</td>
+                                    <td class="p-4 text-right text-slate-900 font-bold">$9,015</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-4 font-medium">VIP 尊榮票</td>
+                                    <td class="p-4 text-right">฿15,590</td>
+                                    <td class="p-4 text-right text-slate-900 font-bold">$14,655</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="bg-slate-50 p-6 rounded-xl border border-purple-200">
+                        <h3 class="font-bold text-lg mb-4 text-slate-900">官方接駁預估 (每人)</h3>
+                        <div class="flex gap-4 mb-4">
+                            <select id="ticketType" class="flex-1 p-2 border rounded-lg">
+                                <option value="9015">GA 3日票 ($9,015)</option>
+                                <option value="14655">VIP 3日票 ($14,655)</option>
+                            </select>
+                            <select id="shuttleType" class="flex-1 p-2 border rounded-lg">
+                                <option value="2350">含官方接駁 ($2,350)</option>
+                                <option value="0">不含接駁 ($0)</option>
+                            </select>
+                        </div>
+                        <div class="flex justify-between items-center pt-4 border-t border-slate-200">
+                            <span class="font-medium text-slate-500">預估基本支出：</span>
+                            <span id="totalCost" class="text-2xl font-bold text-purple-600">$11,365</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stage Guide -->
+        <section id="stages" class="py-12 max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-slate-900 mb-8 text-center">🏟️ 舞台風格定位</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden card-hover">
+                    <div class="h-24 stage-gradient-kinetic flex items-center justify-center text-4xl">🏰</div>
+                    <div class="p-5">
+                        <h3 class="font-bold text-lg mb-1">kineticFIELD</h3>
+                        <p class="text-sm text-slate-600">主流巨星、Big Room 與震撼煙火秀的主舞台。</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden card-hover">
+                    <div class="h-24 stage-gradient-circuit flex items-center justify-center text-4xl">⚡</div>
+                    <div class="p-5">
+                        <h3 class="font-bold text-lg mb-1">circuitGROUNDS</h3>
+                        <p class="text-sm text-slate-600">Bass、DnB 與重低音愛好者的 LED 環繞聖地。</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden card-hover">
+                    <div class="h-24 stage-gradient-neon flex items-center justify-center text-4xl">🕷️</div>
+                    <div class="p-5">
+                        <h3 class="font-bold text-lg mb-1">neonGARDEN</h3>
+                        <p class="text-sm text-slate-600">地下鐵克諾 (Techno) 與迷幻節奏的花園舞台。</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden card-hover">
+                    <div class="h-24 stage-gradient-stereo flex items-center justify-center text-4xl">🔊</div>
+                    <div class="p-5">
+                        <h3 class="font-bold text-lg mb-1">stereoBLOOM</h3>
+                        <p class="text-sm text-slate-600">硬派 (Hardstyle) 與 Trance 的高速能量舞台。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lineup Section -->
+        <section id="lineup" class="bg-slate-100 py-12">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="flex flex-col md:flex-row justify-between items-center mb-8 gap-4">
+                    <h2 class="text-3xl font-bold text-slate-900">🎵 DJ 陣容攻略</h2>
+                    <div class="flex bg-white p-1 rounded-xl shadow-sm border border-slate-200">
+                        <button onclick="updateDay(1)" id="day1-btn" class="px-6 py-2 rounded-lg font-bold transition-all bg-purple-600 text-white">Day 1</button>
+                        <button onclick="updateDay(2)" id="day2-btn" class="px-6 py-2 rounded-lg font-bold transition-all text-slate-500">Day 2</button>
+                        <button onclick="updateDay(3)" id="day3-btn" class="px-6 py-2 rounded-lg font-bold transition-all text-slate-500">Day 3</button>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <!-- Analytics -->
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 lg:col-span-1">
+                        <h3 class="font-bold text-center mb-4 text-slate-800" id="chart-title">Day 1 曲風分析</h3>
+                        <div class="chart-container">
+                            <canvas id="genreChart"></canvas>
+                        </div>
+                        <div class="mt-6 p-4 bg-purple-50 rounded-lg text-sm text-purple-800" id="day-strategy">
+                            <strong>本日策略：</strong> 傳奇重聚與重低音轟炸。第一天壓軸是 Axwell b2b Ingrosso，建議留體力。
+                        </div>
+                    </div>
+
+                    <!-- List -->
+                    <div id="artist-list" class="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <!-- JS renders content -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-slate-900 text-slate-400 py-10 text-center">
+        <p class="text-sm">EDC Thailand 2026 Interactive Travel Guide</p>
+        <p class="text-xs mt-2">© 2026 Based on Official Lineup Data</p>
+    </footer>
+
+    <script>
+        const artists = [
+            // Day 1
+            { name: "Axwell b2b Sebastian Ingrosso", day: 1, stage: "kineticFIELD", genre: "Big Room / Prog", color: "pink", desc: "瑞典浩室黑手黨成員睽違已久聯手。" },
+            { name: "Chase & Status", day: 1, stage: "circuitGROUNDS", genre: "DnB / Jungle", color: "orange", desc: "英國 DnB 龍頭，能量極高。" },
+            { name: "Svdden Death", day: 1, stage: "circuitGROUNDS", genre: "Dubstep / Riddim", color: "orange", desc: "視覺效果非常硬核黑暗且震撼。" },
+            { name: "Jessica Audiffred", day: 1, stage: "circuitGROUNDS", genre: "Dubstep / Bass", color: "orange", desc: "墨西哥 Bass 女王，極度暴力的重低音。" },
+            { name: "Hedex", day: 1, stage: "circuitGROUNDS", genre: "Jump Up DnB", color: "orange", desc: "目前最火 DnB 新秀，混音極快。" },
+            { name: "Argy", day: 1, stage: "neonGARDEN", genre: "Melodic Techno", color: "indigo", desc: "Afterlife 大將，充滿宗教感節奏。" },
+
+            // Day 2
+            { name: "Zedd", day: 2, stage: "kineticFIELD", genre: "Pop EDM", color: "pink", desc: "神曲製造機，全場合唱 Clarity 的夢幻時間。" },
+            { name: "Alok", day: 2, stage: "kineticFIELD", genre: "Brazilian Bass", color: "pink", desc: "巴西電音天王，適合海島派對氛圍。" },
+            { name: "Fisher", day: 2, stage: "kineticFIELD", genre: "Tech House", color: "pink", desc: "人氣王，現場氣氛超級嗨。" },
+            { name: "Sub Focus / Wilkinson", day: 2, stage: "circuitGROUNDS", genre: "DnB", color: "orange", desc: "DnB 迷的聖杯，當天電音能量最強。" },
+            { name: "Sara Landry", day: 2, stage: "neonGARDEN", genre: "Hard Techno", color: "indigo", desc: "全球最紅 Techno 女 DJ，BPM 極高。" },
+            { name: "Lilly Palmer", day: 2, stage: "neonGARDEN", genre: "Peak Techno", color: "indigo", desc: "來自德國的女神，節奏強勁且充滿能量。" },
+
+            // Day 3
+            { name: "Armin van Buuren", day: 3, stage: "kineticFIELD", genre: "Trance", color: "pink", desc: "曼神回歸，保證絕無冷場。" },
+            { name: "Afrojack", day: 3, stage: "kineticFIELD", genre: "Big Room", color: "pink", desc: "最純粹的 EDM 炸場感，經典派對首選。" },
+            { name: "Seven Lions", day: 3, stage: "circuitGROUNDS", genre: "Melodic Dubstep", color: "orange", desc: "旋律與重低音結合的重頭戲。" },
+            { name: "deadmau5", day: 3, stage: "circuitGROUNDS", genre: "Progressive", color: "orange", desc: "鼠爺重視細節與視覺沈浸感。" },
+            { name: "GRiZ", day: 3, stage: "circuitGROUNDS", genre: "Bass Music", color: "orange", desc: "現場薩克斯風與電音完美結合。" },
+            { name: "Sub Zero Project", day: 3, stage: "stereoBLOOM", genre: "Hardstyle", desc: "硬派戰場，撞擊心臟的極致體驗。" }
+        ];
+
+        const dayInfo = {
+            1: { theme: "傳奇重聚與重低音轟炸", chart: [15, 45, 25, 15], labels: ["Big Room", "DnB/Bass", "Dubstep", "Techno"] },
+            2: { theme: "全明星陣容與硬核 Techno", chart: [40, 20, 30, 10], labels: ["Pop/House", "DnB", "Techno", "Other"] },
+            3: { theme: "傳奇收尾與旋律重低音", chart: [30, 40, 20, 10], labels: ["Trance/EDM", "Bass/Live", "Prog/Tech", "Hardstyle"] }
+        };
+
+        let currentDay = 1;
+        let chartInstance = null;
+
+        function updateDay(day) {
+            currentDay = day;
+
+            // Buttons
+            [1, 2, 3].forEach(d => {
+                const btn = document.getElementById(`day${d}-btn`);
+                btn.className = `px-6 py-2 rounded-lg font-bold transition-all ${d === day ? 'bg-purple-600 text-white shadow-md' : 'text-slate-500 hover:bg-slate-50'}`;
+            });
+
+            // Text
+            document.getElementById('chart-title').innerText = `Day ${day} 曲風分析`;
+            document.getElementById('day-strategy').innerHTML = `<strong>本日策略：</strong> ${dayInfo[day].theme}`;
+
+            renderArtists();
+            renderChart();
+        }
+
+        function renderArtists() {
+            const list = document.getElementById('artist-list');
+            list.innerHTML = '';
+            artists.filter(a => a.day === currentDay).forEach(a => {
+                list.innerHTML += `
+                    <div class="bg-white p-5 rounded-xl border-l-4 border-purple-500 shadow-sm card-hover">
+                        <div class="flex justify-between items-start mb-2">
+                            <span class="text-[10px] font-bold uppercase bg-slate-100 px-2 py-0.5 rounded text-slate-500">${a.stage}</span>
+                            <span class="text-[10px] text-purple-600 font-bold">${a.genre}</span>
+                        </div>
+                        <h4 class="font-bold text-slate-900">${a.name}</h4>
+                        <p class="text-xs text-slate-500 mt-2 leading-relaxed">${a.desc}</p>
+                    </div>
+                `;
+            });
+        }
+
+        function renderChart() {
+            const ctx = document.getElementById('genreChart').getContext('2d');
+            if (chartInstance) chartInstance.destroy();
+
+            chartInstance = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: dayInfo[currentDay].labels,
+                    datasets: [{
+                        data: dayInfo[currentDay].chart,
+                        backgroundColor: ['#ec4899', '#f97316', '#8b5cf6', '#06b6d4'],
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { position: 'bottom', labels: { boxWidth: 10, font: { size: 10 } } }
+                    }
+                }
+            });
+        }
+
+        function setupCalc() {
+            const t = document.getElementById('ticketType');
+            const s = document.getElementById('shuttleType');
+            const res = document.getElementById('totalCost');
+            const calc = () => res.innerText = `$${(parseInt(t.value) + parseInt(s.value)).toLocaleString()}`;
+            t.onchange = s.onchange = calc;
+        }
+
+        window.onload = () => {
+            updateDay(1);
+            setupCalc();
+        };
+    </script>
+</body>
+</html>
